@@ -1,0 +1,30 @@
+    prueba de ruta inexistente
+
+    proceso: se ingreso en la barra de buscada la ruta porejemplo al final del url
+    que corresponde a una pagina que no existe en rueda libre
+
+    este codigo indica que el servidor no encontro el recurso que buscaba el usuario
+    siendo en este caso porejemplo que no existe
+
+    HTML: se utilizara para desarrollar la estructura de la pagina, incluyendo los servicios
+    y diseños encargados, por ejemplo los encabezados, titules, informacion relevante, etc.
+
+    <h1>rueda libre</h1>
+    <p>Alquila bicicleta en medellin</p>
+    
+    CSS:se usara para definir y diseñar el que como se vera
+    la pagina como colores, fuentes, tamaños, etc
+
+    </>. CSS
+
+    h1 {
+        colores: #168
+        tex-aling: center
+    }
+
+    JavaScrip:se usara para hacer las interacciones del sitio web
+    por ejemplo hacer clic en un boton de consultas
+
+    document.querySelector("button").addEventListener("click", function() {
+  alert("¡Consulta nuestras bicicletas disponibles!");
+});
