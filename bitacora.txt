@@ -28,3 +28,11 @@
     document.querySelector("button").addEventListener("click", function() {
   alert("¡Consulta nuestras bicicletas disponibles!");
 });
+
+
+Archivo origen	destino 		Ruta escrita
+
+index.html	pagina de tarifas	tarifas.html	<a href="pagina/tarifas.html">Tarifas</a>
+				
+
+index.html	pagina de reservas	reservas.html	<a href="pagina/reservas.html">Reservas</a>
