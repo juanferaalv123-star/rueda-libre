@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="../img/Logo.png">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    
+    <header>
+        <img src="../img/Logo.png" alt="Logo de Rueda Libre" width="150">
+
+        
+    </header>
+    <nav>
+            <ul id="menu">
+                <li><a href="../index.html">Volver al inicio</a></li>
+                <li><a href="tarifas.html">Tarifas</a></li>
+                <li><a href="reservas.html" class="activo">Reservas</a></li>
+            </ul>
+        </nav>
+<main>
+    <section>
+    <h1>Reserva tu bicicleta</h1>
+
+    <p>
+        Contacta y Reserva aqui
+        <a href="mailto:hola@ruedalibre.com">
+            hola@ruedalibre.com
+        </a>    
+    </p>
+    </section>
+
+    <section>
+    <h2>Horario de atencion</h2>
+    <dl>
+        <dt>Lunes a Viernes</dt>
+        <dd>7:00 a.m. - 7:00 p.m.</dd>
+        <dt>Sábados</dt>
+        <dd>6:00 a.m. - 2:00 p.m.</dd>
+        <dt>Domingos y festivos</dt>
+        <dd>6:00 a.m. - 2:00 p.m.</dd>    
+    </dl>
+
+    <h3>Formulario de reserva</h3>
+
+        <form method="post">
+            <label for="nombre">Nombre Completo:</label>
+            <input type="text" id="nombre" name="nombre" required minlength="3"><br><br>
+
+            <label for="documento">Número de documento:</label>
+            <input type="tel" id="documento" name="documento" required 
+            pattern="[0-9]{10}"
+            title="ingresa entre 6 y 10 digitos numeros sin espacios ni texto"><br><br>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required 
+            pattern="3[0-9]{9}"
+            title="Ingrese 10 digitos empezando con 3"><br><br>
+
+            <label for="bicicleta">Tipo de bicicleta:</label>
+            <select id="bicicleta" name="bicicleta">
+                <option
+                <option value="urbana">Urbana</option>
+                <option value="montaña">Montaña</option>
+                <option value="electrica">Eléctrica</option>
+            </select><br><br>
+
+            <label for="cantidad">Cantidad de bicicletas:</label>
+            <input id="cantidad" name="cantidad" required min="1" max="6" style="width: 10px;"><br><br>   
+            </input><br><br>
+
+            <label for="plan">Plan de alquiler:</label>
+            <select id="plan" name="plan"required>
+                <option value="Selecciona un plan">Selecciona un plan</option>
+                <option value="1hora">1 Hora</option>
+                <option value="medio_dia">Medio día</option>
+                <option value="dia_completo">Día completo</option>
+            </select><br><br>
+
+            <label for="ruta">Ruta:</label>
+            <select id="ruta" name="ruta"requiered>
+                <option value="Ninguna Ruta">Ninguna Ruta</option>
+                <option value="Rio y parques">Río y parques</option>
+                <option value="Sabores de barrio">Sabores de barrio</option>
+                <option value="Retos las palmas">Retos las palmas</option>
+            </select><br><br>
+
+            <label for="fecha">Fecha de reserva:</label>
+            <input type="date" id="fecha" name="fecha" required min="2026-11-01" max="2026-12-31"><br><br>
+
+            <input type="checkbox" id="terminos" name="terminos" required>
+            <label for="terminos">Acepto los términos y condiciones de alquiler</label><br><br>
+
+            <label for="comentarios">Comentarios adicionales:</label><br>
+            <textarea id="comentarios" name="comentarios" rows="4" cols="50" maxlength="300"></textarea><br><br>
+
+            <input type="submit" value="Reservar">
+        </form>
+
+        
+
+
+    </section>
+    </main>
+    <section class="pdp">
+    <footer class="pdp">
+        <p>© 2026 Rueda Libre. Todos los derechos reservados.</p>
+    </section>
+    </footer>
+</body>
+</html>

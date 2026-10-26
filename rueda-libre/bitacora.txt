@@ -1,0 +1,51 @@
+    
+    
+    prueba de ruta inexistente
+
+    proceso: se ingreso en la barra de buscada la ruta porejemplo al final del url
+    que corresponde a una pagina que no existe en rueda libre
+
+    este codigo indica que el servidor no encontro el recurso que buscaba el usuario
+    siendo en este caso porejemplo que no existe
+
+    HTML: se utilizara para desarrollar la estructura de la pagina, incluyendo los servicios
+    y diseños encargados, por ejemplo los encabezados, titules, informacion relevante, etc.
+
+    <h1>rueda libre</h1>
+    <p>Alquila bicicleta en medellin</p>
+    
+    CSS:se usara para definir y diseñar el que como se vera
+    la pagina como colores, fuentes, tamaños, etc
+
+    </>. CSS
+
+    h1 {
+        colores: #168
+        tex-aling: center
+    }
+
+    JavaScrip:se usara para hacer las interacciones del sitio web
+    por ejemplo hacer clic en un boton de consultas
+
+    document.querySelector("button").addEventListener("click", function() {
+  alert("¡Consulta nuestras bicicletas disponibles!");
+});
+
+
+Archivo origen	destino 		Ruta escrita
+
+index.html	pagina de tarifas	tarifas.html	<a href="pagina/tarifas.html">Tarifas</a>
+				
+
+index.html	pagina de reservas	reservas.html	<a href="pagina/reservas.html">Reservas</a>
+
+
+Combinacion de texto y fondo    Contraste Texto normal Texto grande
+Blanco sobre verde ruta          5.31:1   Apto          No apto
+Blanco sobre naranja pendal      2.21:1   No apto       No apto
+Azul Noche sobre naranja pendal  7.2:1    Apto          Apto
+Azul Noche sobre crema           14.82:1  Apto          Apto
+Gris asfalto sobre crema         5.56.1   Apto          No apto
+Verde ruta sobre crema           4.93     Apto          No apto
+Naranja pendal sobre crema       2.05:1   No apto       No apto
+Blanco sobre azul Noche          15.97    Apto          Apto
