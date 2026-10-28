@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rueda Libre</title>
+    <title>Rueda Libre | Alquiler de Bicicletas</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,38 +15,39 @@
 </head>
 <body>
     <header>
-        <section>
-            <h1>Rueda libre</h1>
-            <img src="img/Logo.png" alt="Logo de Rueda Libre">
+        <section class="cnt">
+            <div class="idiv">
+                <h1>Rueda libre</h1> 
+            </div>    
+            <img src="img/Logo.png" alt="Logo de Rueda Libre"> 
+            
+             <nav>
+                <ul id="menu">
+                    <li><a href="index.html" class="activo">Inicio</a></li>
+                    <li><a href="paginas/tarifas.html">Tarifas</a></li>
+                    <li><a href="paginas/reservas.html">Reservas</a></li>
+                </ul>
+            </nav>
         </section>
-         
+        
     </header>
-
-    <main>        
-
-         <nav>
-            <ul id="menu">
-                <li><a href="index.html" class="activo">Inicio</a></li>
-                <li><a href="paginas/tarifas.html">Tarifas</a></li>
-                <li><a href="paginas/reservas.html">Reservas</a></li>
-            </ul>
-        </nav>
+           
         
         
+<main>  
     <a href="#encuentranos">Encuéntranos aquí</a>.
 
-
         <section>
-        <h2>Quienes somos</h2>
-        <p>Somos una empresa dedicada a la renta de bicicletas y <strong>recorridos guiados</strong> en la ciudad de Medellin, Antioaquia. <strong>Contamos</strong> con un taller basico para el mantenimiento de las bicicletas.</p>
+            <h2>Quienes somos</h2>
+            <p>Somos una empresa dedicada a la renta de bicicletas y <strong>recorridos guiados</strong> en la ciudad de Medellin, Antioaquia. <strong>Contamos</strong> con un taller basico para el mantenimiento de las bicicletas.</p>
 
-        <article class="servicio">   
-        <h2>Nuestros servicios</h2>
-            <p>• Alquiler de bicicletas</p>
-            <p>• Recorridos guiados</p>
-            <p>• Taller basico</p>
-            <img src="img/bicicleta.jpg" alt="bicicleta disponible">
-        </article> 
+            <article class="servicio">   
+            <h2>Nuestros servicios</h2>
+                <p>• Alquiler de bicicletas</p>
+                <p>• Recorridos guiados</p>
+                <p>• Taller basico</p>
+                <img src="img/bicicleta.jpg" alt="bicicleta disponible">
+            </article> 
         </section>
 
         <article>
@@ -75,24 +76,39 @@
 
     </main>
     <section class="pdp">
-    <footer>
-        <h4>Contactanos</h4>
-        <p>¡Contáctanos para más información!</p>
-        <p>Teléfono: 33 1234 5678</p>
-        <p>
+    <footer class="site-footer">
+
+        <div class="footer-mark">
+            <img src="img/Logo.png" alt="Logo de Rueda Libre"> 
+        </div>
+        <div class="footer-contact">
+            <h4>Contactanos</h4>            
+            <p>¡Contáctanos para más información!</p>
+            <p>Teléfono: 33 1234 5678</p>
             <a href="mailto:hola@ruedalibre.com">
-                Escríbenos por correo electrónico
+            Escríbenos por correo electrónico
             </a>
-        </p>
-         <h2 id="encuentranos">Encuéntranos</h2>
+            <h4 id="encuentranos"><p>Encuéntranos</p></h4>
             <p>Encuentranos</p>
                 <a href ="https://www.google.com/maps/place/Taller+rueda+libre+JD/@6.2458504,-75.5557259,18.42z/data=!4m10!1m2!2m1!1srueda+libre!3m6!1s0x8e4429e0e02bac81:0x163e0248229859a!8m2!3d6.2461891!4d-75.5550718!15sCgtydWVkYSBsaWJyZZIBFm1vdG9yY3ljbGVfcmVwYWlyX3Nob3DgAQA!16s%2Fg%2F11vjbnnhz9?entry=ttu&g_ep=EgoyMDI2MTAxNC4wIKXMDSoASAFQAw%3D%3D
                 target="_blank">Ver en Google Maps</a>
-           
-            
+        </div>
 
+        <div class="footer-horario">
+            <h4>Horario</h4>
+                <dl>
+                    <dt>Lunes a Viernes</dt>
+                    <dd>7:00 a.m. - 7:00 p.m.</dd>
+                    <dt>Sábados</dt>
+                    <dd>6:00 a.m. - 2:00 p.m.</dd>
+                    <dt>Domingos y festivos</dt>
+                    <dd>6:00 a.m. - 2:00 p.m.</dd>    
+                </dl>
+        </div>
+         
         <p>&copy; 2026 Rueda Libre. Todos los derechos reservados.</p>
-    </section>
+    
     </footer>
+    </section>
 </body>
 </html>

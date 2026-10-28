@@ -1,5 +1,8 @@
-
+/* =========================================
+   1. VARIABLES GLOBALES
+   ========================================= */
 :root {
+    /* Colores */
     --primary-color: #14213D;
     --secondary-color: #5B6470;
     --background-color: #FAF6EF;
@@ -8,14 +11,20 @@
     --font-family: 'Open Sans', sans-serif;
     --heading-font-family: 'Montserrat', sans-serif;
 
+    /* Espaciados */
     --espaciado-pequeño: 0.5rem;
     --espaciado-mediano: 1rem;
     --espaciado-grande: 2rem;
 
+    /* Tamaños y bordes */
     --spacing-md: 18px;
     --radius-md: 8px;
 }
 
+
+/* =========================================
+   2. ESTILOS GENERALES DEL DOCUMENTO
+   ========================================= */
 body {
     font-family: var(--font-family);
     background-color: var(--background-color);
@@ -24,14 +33,9 @@ body {
     padding: 0;
 }
 
-img {
-    display: block;
-    margin: 0 auto;
-    padding: var(--espaciado-grande);
-   max-width: 200px;
-
-}
-
+/* =========================================
+   3. CONTENIDO PRINCIPAL
+   ========================================= */
 main {
 
     padding: var(--espaciado-grande);
@@ -40,29 +44,46 @@ main {
 
 }
 
-footer {
+/* =========================================
+   4. ENCABEZADO Y LOGO
+   ========================================= */
+header {
+    display: flex;
+    flex-direction: row;
+    background-color: #5B6470;
+}
 
-      padding: var(--espaciado-grande);
-    max-width: 60rem;
+/* Contenedor general del encabezado */
+.cnt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35rem;
+
+}
+
+/* Contenedor del título y la imagen */
+
+.idiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    
+}
+
+/* Imágenes generales */
+img {
     margin: 0 auto;
+    padding: var(--espaciado-grande);
+    max-width: 125px;
+    border-radius: 100%;
 }
 
 
-.servicio {
-  padding: var(--spacing-md);
-  border: 2px solid var(--secondary-color);
-  border-radius: var(--radius-md);
-  margin-bottom: var(--spacing-md);
-}
-
-.servicio img {
-    display: block; 
-    width: 100%;
-    height: auto;
-    border-radius: 0.5rem;
-    margin-bottom: var(--spacing-md);
-  
-}
+/* =========================================
+   5. TÍTULOS
+   ========================================= */
 
 h1, h2, h3, h4, h5, h6 {
     max-width: 60rem;
@@ -73,42 +94,69 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
+
+/* =========================================
+   6. MENÚ DE NAVEGACIÓN
+   ========================================= */
+
+/* Organización de los enlaces del menú */
+
 #menu {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     padding: 0;
-    gap: var(--espaciado-mediano);
-   
+    gap: 15px;
+    list-style: none;
+    flex-wrap: wrap;
+    margin: 0;
+    
 }
 
-
+/* Estilos generales de los enlaces */
 
 #menu a {
-    color: var(--secondary-color);
+    color: var(--button-color);
     text-decoration: none;
     padding: 10px 15px;
     border-radius: 5px;
 }
 
+/* Identificación del enlace de la página actual */
+
+#menu a {
+    color: var(--button-color);
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+/* Identificación del enlace de la página actual */
+
 #menu a.activo{
 
-  color: var(--links-color); font-weight: 600; 
+  color: var(--primary-color); font-weight: 600; 
         
 }
 
-
-/* Cuando el cursor pasa sobre el enlace */
-#menu a:hover {
-    background-color: var(--links-color);
-    color: #FFFFFF;
-}
-/*Cuando se utiliza el tabulador*/
+/* Indicador de enfoque mediante el teclado */
 
 #menu a:focus {
     outline: 2px solid var(--button-color);
     outline-offset: 2px;
 }
 
+
+/* Efecto cuando el cursor pasa sobre un enlace */
+
+#menu a:hover {
+    background-color: var(--links-color);
+    color: #FFFFFF;
+}
+/* =========================================
+   7. BOTÓN DE RESERVAS
+   ========================================= */
+
+/* Apariencia principal del botón */
 
 .boton-reservar {
     display: inline-block;
@@ -120,15 +168,25 @@ h1, h2, h3, h4, h5, h6 {
     transition: background-color 0.3s, color 0.3s;
 }
 
+/* Efecto al pasar el cursor por el botón */
+
 .boton-reservar:hover {
     background-color: var(--button-color);
     color: #FFFFFF;
 }
 
+/* Indicador de enfoque del botón */
+
 .boton-reservar:focus {
     outline: 3px solid var(--button-color);
     outline-offset: 3px;
 }
+
+/* =========================================
+   8. FORMULARIOS Y CAMPOS DE ENTRADA
+   ========================================= */
+
+/* Indicador de enfoque de los campos */
 
 input:focus,
 select:focus, 
@@ -137,31 +195,136 @@ textarea:focus {
     outline-offset: 2px;
 }
 
-header,
-footer {
+/* Contenedor general del formulario */
 
-    background-color: #14213D;
+form {
+
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
 
 }
 
+/* Separación entre grupos del formulario */
+
+.grupo {
+
+    margin-bottom: 15px;
+
+}
+
+/* Etiquetas de los campos */
+
+label {
+    display: block;
+    margin-bottom: 12px;
+}
+
+/* Campos de texto y áreas de escritura */
+
+input,
+textarea {
+
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+
+}
+
+/* Botones de los formularios */
+
+button {
+
+    padding: 12px 28px;
+    cursor: pointer;
+
+}
+
+/* =========================================
+   9. TARJETAS DE SERVICIOS
+   ========================================= */
+
+/* Diseño general de cada tarjeta */
+
+.servicio {
+    padding: var(--spacing-md);
+    border: 2px solid var(--secondary-color);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Imágenes dentro de las tarjetas */
+
+.servicio img {
+
+    display: block; 
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-bottom: var(--spacing-md);
+
+}
+
+/* =========================================
+   10. PIE DE PÁGINA
+   ========================================= */
+
+/* Contenedor general del pie */
+
+footer {
+
+    padding: var(--espaciado-grande);
+    max-width: 60rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: #5B6470;
+
+}
+
+/* Texto del pie de página */
+
 .pdp {
 
-    background-color: #14213D;
+    background-color: #5B6470;
     color: var(--background-color);
 
 }
 
-a {
-
-    color: var(--links-color)
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
+.site-footer > div {
+    flex: 1;
+}
+
+/* =========================================
+   11. ENLACES GENERALES
+   ========================================= */
+
+
+a {
+
+    color: var(--button-color)
+}
+
+/* =========================================
+   12. TABLAS
+   ========================================= */
 
 table {
 
     width: 100%;
     border-collapse: collapse;
-
+    margin-left: auto;
+    margin-right: auto;
 }
 
 th,
@@ -180,46 +343,51 @@ th {
 
 }
 
-table {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-form {
-
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-
-}
-
-.grupo {
-
-    margin-bottom: 15px;
-
-}
-
-label {
-
-    display: block;
-    margin-bottom: 12px;
 
 
-}
-
-input,
-textarea {
-
-    width: 100%;
-    padding: 12px;
-    box-sizing: border-box;
-
-}
 
 
-button {
 
-    padding: 12px 28px;
-    cursor: pointer;
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
