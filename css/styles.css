@@ -22,7 +22,7 @@
 }
 
 /* =========================================
-   2. ESTILOS BASE / MÓVIL (1 columna por defecto)
+   2. ESTILOS BASE / MÓVIL
    ========================================= */
 * {
     box-sizing: border-box;
@@ -36,7 +36,6 @@ body {
     padding: 0;
 }
 
-/* REGLA GENERAL PARA IMÁGENES (Punto 4) */
 img {
     max-width: 100%;
     height: auto;
@@ -50,84 +49,7 @@ main {
 }
 
 /* -----------------------------------------
-   Encabezado (Móvil: Título arriba, menú abajo centrado - Punto 3)
-   ----------------------------------------- */
-header {
-    background-color: var(--secondary-color);
-    width: 100%;
-}
-
-.cnt {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 1rem;
-    gap: 1rem;
-}
-
-.idiv {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 0.5rem;
-}
-
-header h1 {
-    margin: 0;
-    padding: 0;
-    font-size: 1.5rem;
-    color: #FFFFFF; 
-    text-align: center;
-}
-
-header img {
-    margin: 0;
-    padding: 0;
-    max-width: 60px;
-    height: auto;
-    border-radius: 50%;
-}
-
-/* Menú de navegación en móvil */
-#menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 0;
-    gap: 10px;
-    list-style: none;
-    margin: 0;
-}
-
-#menu a {
-    color: var(--button-color);
-    text-decoration: none;
-    padding: 8px 12px;
-    border-radius: 5px;
-    display: inline-block;
-}
-
-#menu a.activo {
-    font-weight: 600; 
-}
-
-#menu a:focus {
-    outline: 2px solid var(--button-color);
-    outline-offset: 2px;
-}
-
-#menu a:hover {
-    background-color: var(--links-color);
-    color: #FFFFFF;
-}
-
-/* -----------------------------------------
-   Títulos y Textos
+   Títulos y Textos Base
    ----------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
@@ -141,72 +63,12 @@ a {
     color: var(--links-color);
 }
 
-/* -----------------------------------------
-   Secciones en 1 Columna (Móvil)
-   ----------------------------------------- */
-.portada {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1.5rem;
-    padding: 1.5rem 1rem;
-}
+/* =========================================
+   3. REGLAS EXCLUSIVAS PARA TARIFAS Y RESERVAS
+      (NO eliminar: aún son requeridas por paginas/reservas.html y tarifas.html)
+   ========================================= */
 
-.portada-texto {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.portada-imagen img {
-    max-width: 180px;
-    margin: 0 auto;
-    border-radius: 1rem;
-}
-
-.flota {
-    width: 100%;
-    margin: 0 auto;
-    padding: 10px;
-}
-
-.flota-descripcion {
-    text-align: center;
-    margin-bottom: var(--espaciado-mediano);
-}
-
-.flota-grid,
-.rutas-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.tarjeta-bicicleta,
-.tarjeta-ruta {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: var(--espaciado-mediano);
-    border: 2px solid #14213D;
-    border-radius: 0.75rem;
-    background-color: #FAF6EF;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
-}
-
-.tarjeta-bicicleta img,
-.tarjeta-ruta img {
-    border-radius: 10px;
-    margin: 0 auto 1rem auto;
-}
-
-.tarjeta-bicicleta .precio span {
-    font-size: 0.85rem;
-    font-weight: normal;
-}
-
-/* Formulario y Reservas (Móvil) */
+/* Layout de reservas */
 .reservas-layout {
     display: flex;
     flex-direction: column;
@@ -285,23 +147,21 @@ button {
     color: #FFFFFF;
 }
 
-/* -----------------------------------------
-   Tablas Ajustadas para Móvil (Punto 5)
-   ----------------------------------------- */
+/* Tablas (utilizadas en tarifas) */
 .contenedor-tabla {
     width: 100%;
-    overflow-x: auto; /* Permite scroll solo si es absolutamente necesario */
+    overflow-x: auto;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     margin: 0 auto;
-    font-size: 0.85rem; /* Tamaño de letra reducido para móvil */
+    font-size: 0.85rem;
 }
 
 th, td {
-    padding: 6px 8px; /* Relleno compacto para evitar desbordamiento */
+    padding: 6px 8px;
     border: 1px solid #14213D;
     text-align: left;
     word-break: break-word;
@@ -312,9 +172,9 @@ th {
     color: #FAF6EF;
 }
 
-/* -----------------------------------------
-   Pie de Página (Móvil)
-   ----------------------------------------- */
+/* =========================================
+   4. PIE DE PÁGINA (Común)
+   ========================================= */
 footer {
     padding: var(--espaciado-mediano);
     background-color: #5B6470;
@@ -342,54 +202,15 @@ footer a {
 
 
 /* =========================================
-   3. MEDIA QUERIES (DESDE TABLET: >= 768px)
+   5. MEDIA QUERIES (RESERVAS Y TABLET)
    ========================================= */
 @media (min-width: 768px) {
-
     main {
         padding: var(--espaciado-grande);
         max-width: 60rem;
     }
 
-    /* Restablece la distribución del Encabezado (MiniReto 1 - Punto 3) */
-    .cnt {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 1rem 2rem;
-    }
-
-    .idiv {
-        flex-direction: row;
-        text-align: left;
-    }
-
-    #menu {
-        flex-direction: row;
-        justify-content: flex-end;
-        gap: 15px;
-    }
-
-    /* Portada en 2 columnas */
-    .portada {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        text-align: left;
-        padding: 3rem 2rem;
-    }
-
-    .portada-imagen img {
-        max-width: 200px;
-    }
-
-    /* Grillas a 2 columnas */
-    .flota-grid,
-    .rutas-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
-
-    /* Layout de reservas a 2 columnas */
+    /* Usado por reservas */
     .reservas-layout {
         display: grid;
         grid-template-columns: 2fr 1fr;
@@ -401,7 +222,6 @@ footer a {
         grid-template-columns: 1fr 1fr;
     }
 
-    /* Ajuste de tablas en tablet */
     table {
         font-size: 1rem;
     }
@@ -410,30 +230,10 @@ footer a {
         padding: 12px;
     }
 
-    /* Pie de página en tablet */
     .site-footer {
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
         text-align: left;
-    }
-}
-
-
-/* =========================================
-   4. MEDIA QUERIES (ESCRITORIO: >= 1200px)
-   ========================================= */
-@media (min-width: 1200px) {
-
-    .cnt {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    /* Grillas de productos y rutas a 3 columnas */
-    .flota-grid,
-    .rutas-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2.5rem;
     }
 }

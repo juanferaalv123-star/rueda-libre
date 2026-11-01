@@ -7,208 +7,306 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
     <link rel="icon" type="image/png" href="img/Logo.png">
+    
+    <!-- 1. CSS de Bootstrap 5.3 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Hoja de estilos propia cargada después de Bootstrap -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <section class="cnt">
-            <div class="idiv">
-                <h1>Rueda libre</h1> 
-            </div>    
-            <img src="img/Logo.png" alt="Logo de Rueda Libre"> 
-            
-            <nav>
-                <ul id="menu">
-                    <li><a href="index.html" class="activo">Inicio</a></li>
-                    <li><a href="paginas/tarifas.html">Tarifas</a></li>
-                    <li><a href="paginas/reservas.html">Reservas</a></li>
-                </ul>
-            </nav>
+    <header class="bg-secondary w-100">
+        <section class="container py-3">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <div class="d-flex flex-column flex-md-row align-items-center text-center text-md-start gap-2">
+                    <h1 class="m-0 fs-3 text-white font-monospace">Rueda libre</h1> 
+                </div>    
+                <img src="img/Logo.png" alt="Logo de Rueda Libre" style="max-width: 60px; height: auto;" class="rounded-circle"> 
+                
+                <nav>
+                    <ul id="menu" class="d-flex flex-column flex-md-row align-items-center justify-content-end list-unstyled m-0 gap-3">
+                        <li><a href="index.html" class="activo text-warning text-decoration-none p-2 rounded">Inicio</a></li>
+                        <li><a href="paginas/tarifas.html" class="text-warning text-decoration-none p-2 rounded">Tarifas</a></li>
+                        <li><a href="paginas/reservas.html" class="text-warning text-decoration-none p-2 rounded">Reservas</a></li>
+                    </ul>
+                </nav>
+            </div>
         </section>
     </header>
 
-    <main>
-        <section class="portada">
-            <div class="portada-texto">
-                <h2>Explora Medellin solo o con quien quieras</h2> 
-                
-                <p>
-                    Descrube la ciudad al ritmo que desees junto Rueda Libre.
+    <main class="container py-4">
+        <!-- 2. Portada con grilla de Bootstrap -->
+        <section class="row align-items-center py-4 mb-5">
+            <div class="col-12 col-md-6 text-center text-md-start mb-4 mb-md-0">
+                <h2 class="fw-bold mb-3" style="color: #14213D;">Explora Medellin solo o con quien quieras</h2> 
+                <p class="text-secondary mb-4">
+                    Descubre la ciudad al ritmo que desees junto a Rueda Libre.
                     Alquila la bicicleta de tu gusto y disfruta de las aventuras en nuestras rutas.
                 </p>
-
-                <a href="paginas/reservas.html" class="boton-reservar">Reservar</a>
+                <a href="paginas/reservas.html" class="btn btn-success px-4 py-2 fw-bold">Reservar</a>
             </div>
 
-            <div class="portada-imagen">
-                <img src="img/Sunset Cyclist.png" alt="Ciclista al atardecer">
-            </div>
-        </section>
-
-        <section class="rutas">
-            <h2>Nuestras Rutas</h2>
-
-            <div class="rutas-grid">
-                <article class="tarjeta-ruta">
-                    <img src="img/rios.jpeg" alt="Rio y Parques">
-                    <h2>Rio y Parques</h2>
-                    <p>Una ruta tranquila, rodeada de naturaleza y zonas verdes</p>
-                </article>
-
-                <article class="tarjeta-ruta">
-                    <img src="img/barrio.jpeg" alt="Sabores de Barrio">
-                    <h2>Sabores de Barrio</h2>
-                    <p>Recorre calles, parques y lugares turísticos.</p>
-                </article>
-
-                <article class="tarjeta-ruta">
-                    <img src="img/palmas.jpeg" alt="Reto de las palmas">
-                    <h2>Reto de las palmas</h2>
-                    <p>Perfecta para quienes quieren poner a prueba su resistencia</p>
-                </article>
+            <div class="col-12 col-md-6 text-center">
+                <img src="img/Sunset Cyclist.png" alt="Ciclista al atardecer" class="img-fluid rounded-4 shadow-sm" style="max-width: 250px;">
             </div>
         </section>
 
-        <a href="#encuentranos">Encuéntranos aquí</a>.
+        <!-- Galería de Rutas con Grilla -->
+        <section class="mb-5">
+            <h2 class="text-center fw-bold mb-4" style="color: #14213D;">Nuestras Rutas</h2>
 
-        <section class="quienes-somos">
-            <h2>Quienes somos</h2>
-            <p>Somos una empresa dedicada a la renta de bicicletas y <strong>recorridos guiados</strong> en la ciudad de Medellin, Antioaquia. <strong>Contamos</strong> con un taller basico para el mantenimiento de las bicicletas.</p>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <article class="card h-100 p-3 border-2 border-dark rounded-3 bg-light shadow-sm text-center">
+                        <img src="img/rios.jpeg" class="card-img-top img-fluid rounded mb-3" alt="Rio y Parques">
+                        <div class="card-body p-0">
+                            <h3 class="card-title h5 fw-bold" style="color: #14213D;">Rio y Parques</h3>
+                            <p class="card-text text-secondary small">Una ruta tranquila, rodeada de naturaleza y zonas verdes</p>
+                        </div>
+                    </article>
+                </div>
 
-            <article class="servicio">   
-                <h2>Nuestros servicios</h2>
-                <ul class="lista-servicios">
-                    <li>Alquiler de bicicletas</li>
-                    <li>Recorridos guiados</li>
-                    <li>Taller basico</li>
-                </ul>
-                <img src="img/bicicleta.jpg" alt="bicicleta disponible">
-            </article> 
+                <div class="col">
+                    <article class="card h-100 p-3 border-2 border-dark rounded-3 bg-light shadow-sm text-center">
+                        <img src="img/barrio.jpeg" class="card-img-top img-fluid rounded mb-3" alt="Sabores de Barrio">
+                        <div class="card-body p-0">
+                            <h3 class="card-title h5 fw-bold" style="color: #14213D;">Sabores de Barrio</h3>
+                            <p class="card-text text-secondary small">Recorre calles, parques y lugares turísticos.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="col">
+                    <article class="card h-100 p-3 border-2 border-dark rounded-3 bg-light shadow-sm text-center">
+                        <img src="img/palmas.jpeg" class="card-img-top img-fluid rounded mb-3" alt="Reto de las palmas">
+                        <div class="card-title h5 fw-bold" style="color: #14213D;">Reto de las palmas</h3>
+                        <div class="card-body p-0">
+                            <p class="card-text text-secondary small">Perfecta para quienes quieren poner a prueba su resistencia</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
         </section>
 
-        <section class="proceso-alquiler">
-            <article>
-                <h3>¿Como Alquilar?</h3>
-                <p>Para alquilar una bicicleta, solo tienes que llenar un formulario con tus datos y elegir el tipo de bicicleta y la ruta que deseas alquilar. Una vez que hayas completado el formulario, recibirás un correo electrónico con la confirmación de tu alquiler.</p>
+        <div class="text-center mb-5">
+            <a href="#encuentranos" class="text-decoration-none fw-bold" style="color: #1E7A4F;">Encuéntranos aquí</a>
+        </div>
 
-                <ol>
-                    <li>Llama al numero de teléfono</li>
-                    <li>Llena el formulario de alquiler</li>
-                    <li>Elige el tipo de bicicleta y la ruta</li>
-                    <li>Recibe la confirmación por correo electrónico</li>
-                </ol>
+        <!-- Quiénes somos y Proceso -->
+        <section class="mb-5 bg-white p-4 rounded-4 border border-dark border-2 shadow-sm">
+            <h2 class="fw-bold mb-3" style="color: #14213D;">Quienes somos</h2>
+            <p class="text-secondary mb-4">Somos una empresa dedicada a la renta de bicicletas y <strong>recorridos guiados</strong> en la ciudad de Medellín, Antioquia. <strong>Contamos</strong> con un taller básico para el mantenimiento de las bicicletas.</p>
 
-                <a href="paginas/reservas.html" class="boton-reservar">Reservar ahora</a>
-                <a href="paginas/tarifas.html">Ver tarifas</a>
-            </article>
-
-            <article class="beneficios">
-                <h4>Beneficios del servicio</h4>
-                <ul class="lista-beneficios">
-                    <li>inclusion de cascos y candados</li>
-                    <li>Asistencia técnica</li>
-                    <li>Descuentos en servicios adicionales</li>
-                </ul>
-            </article>
+            <div class="row align-items-center g-4">
+                <div class="col-12 col-md-6">
+                    <h3 class="h5 fw-bold" style="color: #14213D;">Nuestros servicios</h3>
+                    <ul class="list-unstyled text-secondary mb-3">
+                        <li class="py-1">✔ Alquiler de bicicletas</li>
+                        <li class="py-1">✔ Recorridos guiados</li>
+                        <li class="py-1">✔ Taller básico</li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 text-center">
+                    <img src="img/bicicleta.jpg" alt="bicicleta disponible" class="img-fluid rounded-3 shadow-sm" style="max-height: 200px;">
+                </div>
+            </div>
         </section>
 
-        <section class="flota">
-            <h4>Nuestra Flota</h4>
-            <p class="flota-descripcion">
+        <!-- Sección de la Flota (MiniReto 5) -->
+        <section class="mb-5">
+            <h2 class="text-center fw-bold mb-2" style="color: #14213D;">Nuestra Flota</h2>
+            <p class="text-center text-secondary mb-4">
                 Encuentra tu Bici ideal
             </p>
 
-            <div class="flota-grid">
-                <article class="tarjeta-bicicleta">
-                    <img src="img/urbclasica.jpg" alt="Urbana clasica">
-                    <h4>Urbana Clasica</h4>
-                    <p>Cómoda y liviana para las ciclorrutas.</p>
-                    <p class="precio">$10.000 <span>Hora</span></p>
-                    <a class="boton-reservar" href="paginas/reservas.html">Reservar</a>
-                </article>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4">
+                <div class="col">
+                    <article class="card h-100 p-3 border-2 border-dark rounded-3 bg-light shadow-sm text-center">
+                        <img src="img/urbclasica.jpg" class="card-img-top img-fluid rounded mb-3" alt="Urbana clasica">
+                        <div class="card-body p-0 d-flex flex-column justify-content-between">
+                            <h4 class="card-title h5 fw-bold" style="color: #14213D;">Urbana Clasica</h4>
+                            <p class="card-text text-secondary small">Cómoda y liviana para las ciclorrutas.</p>
+                            <p class="fw-bold mb-3" style="color: #14213D;">$10.000 <span class="fw-normal text-muted fs-6">Hora</span></p>
+                            <a class="btn btn-success mt-auto" href="paginas/reservas.html">Reservar</a>
+                        </div>
+                    </article>
+                </div>
 
-                <article class="tarjeta-bicicleta">
-                    <img src="img/urbplegable.jpeg" alt="Urbana Plegable">
-                    <h4>Urbana Plegable</h4>
-                    <p>Cómoda y liviana para las ciclorrutas.</p>
-                    <p class="precio">$12.000 <span>Hora</span></p>
-                    <a class="boton-reservar" href="paginas/reservas.html">Reservar</a>
-                </article>
+                <div class="col">
+                    <article class="card h-100 p-3 border-2 border-dark rounded-3 bg-light shadow-sm text-center">
+                        <img src="img/urbplegable.jpeg" class="card-img-top img-fluid rounded mb-3" alt="Urbana Plegable">
+                        <div class="card-body p-0 d-flex flex-column justify-content-between">
+                            <h4 class="card-title h5 fw-bold" style="color: #14213D;">Urbana Plegable</h4>
+                            <p class="card-text text-secondary small">Cómoda y liviana para las ciclorrutas.</p>
+                            <p class="fw-bold mb-3" style="color: #14213D;">$12.000 <span class="fw-normal text-muted fs-6">Hora</span></p>
+                            <a class="btn btn-success mt-auto" href="paginas/reservas.html">Reservar</a>
+                        </div>
+                    </article>
+                </div>
 
-                <article class="tarjeta-bicicleta">
-                    <img src="img/montrail.jpg" alt="Montaña Trail">
-                    <h4>Montaña Trail</h4>
-                    <p>Cómoda y liviana para las ciclorrutas.</p>
-                    <p class="precio">$15.000 <span>Hora</span></p>
-                    <a class="boton-reservar" href="paginas/reservas.html">Reservar</a>
-                </article>
+                <div class="col">
+                    <article class="card h-100 p-3 border-2 border-dark rounded-3 bg-light shadow-sm text-center">
+                        <img src="img/montrail.jpg" class="card-img-top img-fluid rounded mb-3" alt="Montaña Trail">
+                        <div class="card-body p-0 d-flex flex-column justify-content-between">
+                            <h4 class="card-title h5 fw-bold" style="color: #14213D;">Montaña Trail</h4>
+                            <p class="card-text text-secondary small">Cómoda y liviana para las ciclorrutas.</p>
+                            <p class="fw-bold mb-3" style="color: #14213D;">$15.000 <span class="fw-normal text-muted fs-6">Hora</span></p>
+                            <a class="btn btn-success mt-auto" href="paginas/reservas.html">Reservar</a>
+                        </div>
+                    </article>
+                </div>
 
-                <article class="tarjeta-bicicleta">
-                    <img src="img/graventura.jpeg" alt="Gravel Aventura">
-                    <h4>Gravel Aventura</h4>
-                    <p>Cómoda y liviana para las ciclorrutas.</p>
-                    <p class="precio">$18.000 <span>Hora</span></p>
-                    <a class="boton-reservar" href="paginas/reservas.html">Reservar</a>
-                </article>
+                <div class="col">
+                    <article class="card h-100 p-3 border-2 border-dark rounded-3 bg-light shadow-sm text-center">
+                        <img src="img/graventura.jpeg" class="card-img-top img-fluid rounded mb-3" alt="Gravel Aventura">
+                        <div class="card-body p-0 d-flex flex-column justify-content-between">
+                            <h4 class="card-title h5 fw-bold" style="color: #14213D;">Gravel Aventura</h4>
+                            <p class="card-text text-secondary small">Cómoda y liviana para las ciclorrutas.</p>
+                            <p class="fw-bold mb-3" style="color: #14213D;">$18.000 <span class="fw-normal text-muted fs-6">Hora</span></p>
+                            <a class="btn btn-success mt-auto" href="paginas/reservas.html">Reservar</a>
+                        </div>
+                    </article>
+                </div>
 
-                <article class="tarjeta-bicicleta">
-                    <img src="img/electrica.jpg" alt="Electrica Urbana">
-                    <h4>Electrica Urbana</h4>
-                    <p>Cómoda y liviana para las ciclorrutas.</p>
-                    <p class="precio">$25.000 <span>Hora</span></p>
-                    <a class="boton-reservar" href="paginas/reservas.html">Reservar</a>
-                </article>
+                <div class="col">
+                    <article class="card h-100 p-3 border-2 border-dark rounded-3 bg-light shadow-sm text-center">
+                        <img src="img/electrica.jpg" class="card-img-top img-fluid rounded mb-3" alt="Electrica Urbana">
+                        <div class="card-body p-0 d-flex flex-column justify-content-between">
+                            <h4 class="card-title h5 fw-bold" style="color: #14213D;">Electrica Urbana</h4>
+                            <p class="card-text text-secondary small">Cómoda y liviana para las ciclorrutas.</p>
+                            <p class="fw-bold mb-3" style="color: #14213D;">$25.000 <span class="fw-normal text-muted fs-6">Hora</span></p>
+                            <a class="btn btn-success mt-auto" href="paginas/reservas.html">Reservar</a>
+                        </div>
+                    </article>
+                </div>
 
-                <article class="tarjeta-bicicleta">
-                    <img src="img/infantil.jpg" alt="Infantil">
-                    <h4>Infantil</h4>
-                    <p>Cómoda y liviana para las ciclorrutas.</p>
-                    <p class="precio">8.000 <span>Hora</span></p>
-                    <a class="boton-reservar" href="paginas/reservas.html">Reservar</a>
-                </article>
+                <div class="col">
+                    <article class="card h-100 p-3 border-2 border-dark rounded-3 bg-light shadow-sm text-center">
+                        <img src="img/infantil.jpg" class="card-img-top img-fluid rounded mb-3" alt="Infantil">
+                        <div class="card-body p-0 d-flex flex-column justify-content-between">
+                            <h4 class="card-title h5 fw-bold" style="color: #14213D;">Infantil</h4>
+                            <p class="card-text text-secondary small">Cómoda y liviana para las ciclorrutas.</p>
+                            <p class="fw-bold mb-3" style="color: #14213D;">$8.000 <span class="fw-normal text-muted fs-6">Hora</span></p>
+                            <a class="btn btn-success mt-auto" href="paginas/reservas.html">Reservar</a>
+                        </div>
+                    </article>
+                </div>
 
-                <article class="tarjeta-bicicleta">
-                    <img src="img/tandem.jpg" alt="Tandem">
-                    <h4>Tandem</h4>
-                    <p>Cómoda y liviana para las ciclorrutas.</p>
-                    <p class="precio">$20.000 <span>Hora</span></p>
-                    <a class="boton-reservar" href="paginas/reservas.html">Reservar</a>
-                </article>
+                <div class="col">
+                    <article class="card h-100 p-3 border-2 border-dark rounded-3 bg-light shadow-sm text-center">
+                        <img src="img/tandem.jpg" class="card-img-top img-fluid rounded mb-3" alt="Tandem">
+                        <div class="card-body p-0 d-flex flex-column justify-content-between">
+                            <h4 class="card-title h5 fw-bold" style="color: #14213D;">Tandem</h4>
+                            <p class="card-text text-secondary small">Cómoda y liviana para las ciclorrutas.</p>
+                            <p class="fw-bold mb-3" style="color: #14213D;">$20.000 <span class="fw-normal text-muted fs-6">Hora</span></p>
+                            <a class="btn btn-success mt-auto" href="paginas/reservas.html">Reservar</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Beneficios (MiniReto 6) -->
+        <section class="py-4 my-5 bg-light rounded-4 border border-dark border-2 p-4">
+            <h2 class="text-center fw-bold mb-4" style="color: #14213D;">¿Por qué Rueda Libre?</h2>
+            
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-4">
+                <div class="col">
+                    <div class="card h-100 p-3 border-2 border-dark rounded-3 bg-white shadow-sm text-center">
+                        <div class="card-body p-0 d-flex flex-column justify-content-between">
+                            <h3 class="h5 fw-bold" style="color: #14213D;">Revisión Total</h3>
+                            <p class="card-text text-secondary small">Bicicletas revisadas meticulosamente en cada alquiler para tu seguridad.</p>
+                            <span class="badge bg-success text-dark fw-bold mt-3 py-2">100% Verificado</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 p-3 border-2 border-dark rounded-3 bg-white shadow-sm text-center">
+                        <div class="card-body p-0 d-flex flex-column justify-content-between">
+                            <h3 class="h5 fw-bold" style="color: #14213D;">Kit Incluido</h3>
+                            <p class="card-text text-secondary small">Casco y candado de seguridad incluidos sin costo adicional.</p>
+                            <span class="badge bg-success text-dark fw-bold mt-3 py-2">Sin costo extra</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 p-3 border-2 border-dark rounded-3 bg-white shadow-sm text-center">
+                        <div class="card-body p-0 d-flex flex-column justify-content-between">
+                            <h3 class="h5 fw-bold" style="color: #14213D;">Guías Expertos</h3>
+                            <p class="card-text text-secondary small">Guías certificados que te acompañan a descubrir los mejores lugares.</p>
+                            <span class="badge bg-success text-dark fw-bold mt-3 py-2">Certificados</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 p-3 border-2 border-dark rounded-3 bg-white shadow-sm text-center">
+                        <div class="card-body p-0 d-flex flex-column justify-content-between">
+                            <h3 class="h5 fw-bold" style="color: #14213D;">Múltiples Sedes</h3>
+                            <p class="card-text text-secondary small">Puntos de devolución habilitados en tres sedes estratégicas.</p>
+                            <span class="badge bg-success text-dark fw-bold mt-3 py-2">3 Sedes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Franja final -->
+            <div class="p-4 p-md-5 rounded-4 text-white shadow" style="background-color: #14213D;">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
+                    <div class="text-center text-md-start">
+                        <h3 class="fw-bold mb-2 text-white">¿Listo para rodar?</h3>
+                        <p class="mb-0 text-white-50">Reserva tu bici hoy mismo y vive la mejor experiencia sobre dos ruedas.</p>
+                    </div>
+                    <div class="d-none d-md-block">
+                        <img src="img/Sunset Cyclist.png" alt="Ciclista decorativo" class="rounded-circle border border-success border-2" style="max-width: 80px; height: 80px; object-fit: cover;">
+                    </div>
+                    <div>
+                        <a href="paginas/reservas.html" class="d-inline-block px-4 py-3 rounded-pill fw-bold text-decoration-none shadow-sm" style="background-color: #1E7A4F; color: #14213D;">
+                            Reservar ahora
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="footer-mark">
-            <img src="img/Logo.png" alt="Logo de Rueda Libre"> 
+    <footer class="bg-secondary text-white py-4">
+        <div class="container">
+            <div class="row g-4 align-items-start">
+                <div class="col-12 col-md-4 text-center text-md-start">
+                    <img src="img/Logo.png" alt="Logo de Rueda Libre" style="max-width: 60px;" class="rounded-circle mb-2"> 
+                </div>
+                <div class="col-12 col-md-4 text-center text-md-start">
+                    <h4 class="h5 text-warning fw-bold">Contactanos</h4>            
+                    <p class="small mb-1">¡Contáctanos para más información!</p>
+                    <p class="small mb-1">Teléfono: 33 1234 5678</p>
+                    <a href="mailto:hola@ruedalibre.com" class="text-warning text-decoration-none small d-block mb-3">Escríbenos por correo electrónico</a>
+                    <h4 id="encuentranos" class="h5 text-warning fw-bold">Encuéntranos</h4>
+                    <a href="https://www.google.com/maps/place/Taller+rueda+libre+JD/@6.2458504,-75.5557259,18.42z" target="_blank" rel="noopener noreferrer" class="text-warning text-decoration-none small">Ver en Google Maps</a>
+                </div>
+                <div class="col-12 col-md-4 text-center text-md-start">
+                    <h4 class="h5 text-warning fw-bold">Horario</h4>
+                    <dl class="small mb-0">
+                        <dt>Lunes a Viernes</dt>
+                        <dd class="text-white-50">7:00 a.m. - 7:00 p.m.</dd>
+                        <dt>Sábados</dt>
+                        <dd class="text-white-50">6:00 a.m. - 2:00 p.m.</dd>
+                        <dt>Domingos y festivos</dt>
+                        <dd class="text-white-50">6:00 a.m. - 2:00 p.m.</dd>    
+                    </dl>
+                </div>
+            </div>
+            <hr class="border-light my-3">
+            <p class="text-center small text-white-50 m-0">&copy; 2026 Rueda Libre. Todos los derechos reservados.</p>
         </div>
-        <div class="footer-contact">
-            <h4>Contactanos</h4>            
-            <p>¡Contáctanos para más información!</p>
-            <p>Teléfono: 33 1234 5678</p>
-            <a href="mailto:hola@ruedalibre.com">
-                Escríbenos por correo electrónico
-            </a>
-            <h4 id="encuentranos">Encuéntranos</h4>
-            <a href="https://www.google.com/maps/place/Taller+rueda+libre+JD/@6.2458504,-75.5557259,18.42z/data=!4m10!1m2!2m1!1srueda+libre!3m6!1s0x8e4429e0e02bac81:0x163e0248229859a!8m2!3d6.2461891!4d-75.5550718!15sCgtydWVkYSBsaWJyZZIBFm1vdG9yY3ljbGVfcmVwYWlyX3Nob3DgAQA!16s%2Fg%2F11vjbnnhz9?entry=ttu&g_ep=EgoyMDI2MTAxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Ver en Google Maps</a>
-        </div>
-
-        <div class="footer-horario">
-            <h4>Horario</h4>
-            <dl>
-                <dt>Lunes a Viernes</dt>
-                <dd>7:00 a.m. - 7:00 p.m.</dd>
-                <dt>Sábados</dt>
-                <dd>6:00 a.m. - 2:00 p.m.</dd>
-                <dt>Domingos y festivos</dt>
-                <dd>6:00 a.m. - 2:00 p.m.</dd>    
-            </dl>
-        </div>
-        <p>&copy; 2026 Rueda Libre. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- 3. Bundle de JavaScript de Bootstrap 5.3 CDN al final -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
