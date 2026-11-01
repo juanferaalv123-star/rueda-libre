@@ -21,10 +21,13 @@
     --radius-md: 8px;
 }
 
-
 /* =========================================
-   2. ESTILOS GENERALES DEL DOCUMENTO
+   2. ESTILOS BASE / MÓVIL (1 columna por defecto)
    ========================================= */
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: var(--font-family);
     background-color: var(--background-color);
@@ -33,419 +36,121 @@ body {
     padding: 0;
 }
 
-/* =========================================
-   3. CONTENIDO PRINCIPAL
-   ========================================= */
-main {
-
-    padding: var(--espaciado-grande);
-    max-width: 60rem;
-    margin: 0 auto;
-
+/* REGLA GENERAL PARA IMÁGENES (Punto 4) */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-/* =========================================
-   4. ENCABEZADO Y LOGO
-   ========================================= */
+main {
+    padding: var(--espaciado-mediano);
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* -----------------------------------------
+   Encabezado (Móvil: Título arriba, menú abajo centrado - Punto 3)
+   ----------------------------------------- */
 header {
-    display: flex;
-    flex-direction: row;
     background-color: var(--secondary-color);
     width: 100%;
 }
+
+.cnt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.idiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+}
+
 header h1 {
-   margin: 0;
+    margin: 0;
     padding: 0;
     font-size: 1.5rem;
     color: #FFFFFF; 
+    text-align: center;
 }
 
 header img {
     margin: 0;
     padding: 0;
-    max-width: 60px; /* Tamaño más adecuado para un logo en el encabezado */
+    max-width: 60px;
     height: auto;
     border-radius: 50%;
 }
 
-
-/* Contenedor general del encabezado */
-.cnt {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Esto manda un elemento a la izquierda y el menú a la derecha */
-    max-width: 1200px;             /* Limita el ancho máximo para pantallas grandes */
-    margin: 0 auto;                /* Centra el contenedor en la pantalla */
-    padding: 1rem 2rem;            /* Espaciado interno para que no pegue de los bordes */
-    background-color: var(--secondary-color);
-    box-sizing: border-box;
-}
-
-/* Contenedor del título y la imagen */
-
-.idiv{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1.5rem;
-    
-}
-
-/* Imágenes generales */
-img {
-    margin: 0 auto;
-    padding: var(--espaciado-mediano);
-    max-width: 200px;
-    border-radius: 200px;
-}
-
-
-/* =========================================
-   5. TÍTULOS
-   ========================================= */
-
-h1, h2, h3, h4, h5, h6 {
-    max-width: 60rem;
-    margin: 0 auto;
-    padding: var(--espaciado-grande);
-    font-family: var(--heading-font-family);
-    color: var(--primary-color);
-    text-align: center;
-}
-
-
-/* =========================================
-   6. MENÚ DE NAVEGACIÓN
-   ========================================= */
-
-/* Organización de los enlaces del menú */
-
+/* Menú de navegación en móvil */
 #menu {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     padding: 0;
-    gap: 15px;
+    gap: 10px;
     list-style: none;
-    flex-wrap: wrap;
     margin: 0;
-    
 }
-
-/* Estilos generales de los enlaces */
 
 #menu a {
     color: var(--button-color);
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 8px 12px;
     border-radius: 5px;
+    display: inline-block;
 }
 
-/* Identificación del enlace de la página actual */
-
-#menu a {
-    color: var(--button-color);
-    text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+#menu a.activo {
+    font-weight: 600; 
 }
-
-/* Identificación del enlace de la página actual */
-
-#menu a.activo{
-
-  
-  font-weight: 600; 
-        
-}
-
-/* Indicador de enfoque mediante el teclado */
 
 #menu a:focus {
     outline: 2px solid var(--button-color);
     outline-offset: 2px;
 }
 
-
-/* Efecto cuando el cursor pasa sobre un enlace */
-
 #menu a:hover {
     background-color: var(--links-color);
     color: #FFFFFF;
 }
-/* =========================================
-   7. BOTÓN DE RESERVAS
-   ========================================= */
 
-/* Apariencia principal del botón */
-
-.boton-reservar {
-    display: inline-block;
-    padding: 5px 10px;
-    margin: 5px;
-    max-width: 4rem;
-    background-color: var(--links-color);
-    color: #FFFFFF;
-    text-decoration: none;
-    border: 2px solid #1E7A4F;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-    
-}
-
-/* Efecto al pasar el cursor por el botón */
-
-.boton-reservar:hover {
-    background-color: var(--button-color);
-    color: #FFFFFF;
-}
-
-/* Indicador de enfoque del botón */
-
-.boton-reservar:focus {
-    outline: 3px solid var(--button-color);
-    outline-offset: 3px;
-}
-
-/* =========================================
-   8. FORMULARIOS Y CAMPOS DE ENTRADA
-   ========================================= */
-
-/* Indicador de enfoque de los campos */
-
-input:focus,
-select:focus, 
-textarea:focus {
-    outline: 3px solid var(--button-color);
-    outline-offset: 2px;
-}
-
-/* Contenedor general del formulario */
-
-form {
-
-    width: 100%;
-    max-width: 500px;
+/* -----------------------------------------
+   Títulos y Textos
+   ----------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
-
-}
-
-/* Separación entre grupos del formulario */
-
-.grupo {
-
-    margin-bottom: 15px;
-
-}
-
-/* Etiquetas de los campos */
-
-label {
-    display: block;
-    margin-bottom: 12px;
-}
-
-/* Campos de texto y áreas de escritura */
-
-input,
-textarea {
-
-    width: 100%;
-    padding: 12px;
-    box-sizing: border-box;
-
-}
-
-/* Botones de los formularios */
-
-button {
-
-    padding: 12px 28px;
-    cursor: pointer;
-
-}
-
-/* =========================================
-   9. TARJETAS DE SERVICIOS
-   ========================================= */
-
-/* Diseño general de cada tarjeta */
-
-.servicio {
-    padding: var(--spacing-md);
-    border: 2px solid var(--secondary-color);
-    border-radius: var(--radius-md);
-    margin-bottom: var(--spacing-md);
-}
-
-/* Imágenes dentro de las tarjetas */
-
-.servicio img {
-
-    display: block; 
-    width: 100%;
-    height: auto;
-    border-radius: 0.5rem;
-    margin-bottom: var(--spacing-md);
-
-}
-
-/* =========================================
-   10. PIE DE PÁGINA
-   ========================================= */
-
-/* Contenedor general del pie */
-
-footer {
-
-    padding: var(--espaciado-grande);
-    max-width: 60rem;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
-    background-color: #5B6470;
-    max-width: 100%;
-}
-
-footer img {
-
-    margin: 0;
-    padding: 0;
-    max-width: 60px; /* Tamaño más adecuado para un logo en el encabezado */
-    height: auto;
-    border-radius: 50%;
-}
-
-footer a {
-
-    color: var(--button-color);
-    text-decoration: none;
-
-}
-
-
-/* Texto del pie de página */
-
-.pdp {
-
-    background-color: #5B6470;
-    color: var(--background-color);
-
-}
-
-.site-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 1rem;
-    background-color: #5B6470;
-}
-
-.site-footer > div {
-    flex: 1;
-}
-
-/* =========================================
-   11. ENLACES GENERALES
-   ========================================= */
-
-
-a {
-
-    color: var(--links-color)
-}
-
-/* =========================================
-   12. TABLAS
-   ========================================= */
-
-table {
-
-    width: 100%;
-    border-collapse: collapse;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-th,
-td {
-
-    padding: 12px;
-    border: 1px solid #14213D;
-    text-align: left;
-}
-
-
-th {
-
-    background-color: #FCA311;
-    color: #FAF6EF;
-
-}
-
-.flota  {
-
-    max-width: 100rem;
-    margin: 0 auto;
-    padding: 10px;
-
-}
-
-.flota h4 {
-
+    padding: var(--espaciado-mediano) 0;
+    font-family: var(--heading-font-family);
     color: var(--primary-color);
     text-align: center;
 }
 
-.flota-descripcion {
-
-    text-align: center;
-    margin-bottom: var(--espaciado-grande);
-
+a {
+    color: var(--links-color);
 }
 
-.flota-grid {
-
-    display: grid;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-    
-}
-
-.tarjeta-bicicleta {
-
+/* -----------------------------------------
+   Secciones en 1 Columna (Móvil)
+   ----------------------------------------- */
+.portada {
     display: flex;
     flex-direction: column;
-    padding: var(--espaciado-pequeño);
-    border: 2px solid #14213D;
-    border-radius: 0.75rem;
-    background-color: #FAF6EF;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 50%);
-
-}
-
-.tarjeta-bicicleta img {
-
     align-items: center;
-    border-radius: 10px;
-}
-
-
-.tarjeta-bicicleta .precio span {
-    font-size: 0.85rem;
-    font-weight: normal;
-}
-
-
-.portada {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 2rem;
-    padding: 3rem 2rem;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 1.5rem 1rem;
 }
 
 .portada-texto {
@@ -455,59 +160,66 @@ th {
 }
 
 .portada-imagen img {
-    max-width: 200px;
-    height: auto;
-    display: block;
+    max-width: 180px;
+    margin: 0 auto;
     border-radius: 1rem;
 }
 
-
-.ruta {
-
-    display: grid;
-    padding: 3rem 2rem;
+.flota {
+    width: 100%;
+    margin: 0 auto;
+    padding: 10px;
 }
 
-.rutas h2 {
+.flota-descripcion {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: var(--espaciado-mediano);
 }
 
+.flota-grid,
 .rutas-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
+.tarjeta-bicicleta,
 .tarjeta-ruta {
-
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: var(--espaciado-mediano);
     border: 2px solid #14213D;
-    border-radius: 1px;
+    border-radius: 0.75rem;
     background-color: #FAF6EF;
-
+    box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
 }
 
+.tarjeta-bicicleta img,
+.tarjeta-ruta img {
+    border-radius: 10px;
+    margin: 0 auto 1rem auto;
+}
 
+.tarjeta-bicicleta .precio span {
+    font-size: 0.85rem;
+    font-weight: normal;
+}
 
-
-
+/* Formulario y Reservas (Móvil) */
 .reservas-layout {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 2rem;
-    align-items: start;
-    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem;
     border: 2px solid #14213D;
 }
 
 .reservas-formulario,
 .reservas-contacto {
-    padding: 1.5rem;
+    padding: 1rem;
     border-radius: 0.75rem;
+    width: 100%;
 }
 
 .reservas-formulario {
@@ -531,62 +243,197 @@ th {
     gap: 0.5rem;
 }
 
-.campo input,
-.campo select {
+.campos-fila {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input, select, textarea {
     width: 100%;
-    box-sizing: border-box;
-    padding: 0.75rem;
+    padding: 10px;
     border: 1px solid #5B6470;
     border-radius: 0.4rem;
     font: inherit;
 }
 
-.campo input:focus-visible,
-.campo select:focus-visible {
-    outline: 3px solid #F39A2B;
+input:focus, select:focus, textarea:focus {
+    outline: 3px solid var(--button-color);
     outline-offset: 2px;
 }
 
-.campos-fila {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+button {
+    padding: 12px 28px;
+    cursor: pointer;
+}
+
+.boton-reservar {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: var(--links-color);
+    color: #FFFFFF;
+    text-decoration: none;
+    border: 2px solid #1E7A4F;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: center;
+}
+
+.boton-reservar:hover {
+    background-color: var(--button-color);
+    color: #FFFFFF;
+}
+
+/* -----------------------------------------
+   Tablas Ajustadas para Móvil (Punto 5)
+   ----------------------------------------- */
+.contenedor-tabla {
+    width: 100%;
+    overflow-x: auto; /* Permite scroll solo si es absolutamente necesario */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: 0.85rem; /* Tamaño de letra reducido para móvil */
+}
+
+th, td {
+    padding: 6px 8px; /* Relleno compacto para evitar desbordamiento */
+    border: 1px solid #14213D;
+    text-align: left;
+    word-break: break-word;
+}
+
+th {
+    background-color: #FCA311;
+    color: #FAF6EF;
+}
+
+/* -----------------------------------------
+   Pie de Página (Móvil)
+   ----------------------------------------- */
+footer {
+    padding: var(--espaciado-mediano);
+    background-color: #5B6470;
+    color: var(--background-color);
+}
+
+.site-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 1rem;
 }
 
+footer img {
+    max-width: 60px;
+    height: auto;
+    border-radius: 50%;
+}
 
-.tarjeta {
-    position: relative;
-    background: var(#FAF6EF);
-    border: 1px solid var(#14213D);
-    border-radius: 1rem;
-    padding: 1.5rem;
+footer a {
+    color: var(--button-color);
+    text-decoration: none;
 }
 
 
+/* =========================================
+   3. MEDIA QUERIES (DESDE TABLET: >= 768px)
+   ========================================= */
+@media (min-width: 768px) {
+
+    main {
+        padding: var(--espaciado-grande);
+        max-width: 60rem;
+    }
+
+    /* Restablece la distribución del Encabezado (MiniReto 1 - Punto 3) */
+    .cnt {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+    }
+
+    .idiv {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    #menu {
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 15px;
+    }
+
+    /* Portada en 2 columnas */
+    .portada {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        text-align: left;
+        padding: 3rem 2rem;
+    }
+
+    .portada-imagen img {
+        max-width: 200px;
+    }
+
+    /* Grillas a 2 columnas */
+    .flota-grid,
+    .rutas-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    /* Layout de reservas a 2 columnas */
+    .reservas-layout {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        padding: 2rem;
+    }
+
+    .campos-fila {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Ajuste de tablas en tablet */
+    table {
+        font-size: 1rem;
+    }
+
+    th, td {
+        padding: 12px;
+    }
+
+    /* Pie de página en tablet */
+    .site-footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: left;
+    }
+}
 
 
+/* =========================================
+   4. MEDIA QUERIES (ESCRITORIO: >= 1200px)
+   ========================================= */
+@media (min-width: 1200px) {
 
+    .cnt {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    /* Grillas de productos y rutas a 3 columnas */
+    .flota-grid,
+    .rutas-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+}
