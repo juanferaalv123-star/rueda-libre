@@ -1,0 +1,187 @@
+URL: http://127.0.0.1:5500/index.html
+Protocolo: HTTP
+host: 127.0.0.1
+puerto: 5500
+ruta: index.html
+peticion: GET
+codigo de estado: 200 ok
+
+HTML Estructura del sitio
+
+HTML se encarga de organizar el contenido de la página web. Permite agregar títulos, textos, imágenes, enlaces, formularios y secciones.
+
+Ejemplo: Crear la sección de bicicletas disponibles, mostrando el nombre de cada bicicleta, su imagen, descripción y precio por hora.
+
+CSS Diseño y apariencia
+
+CSS se utiliza para darle estilo a la página web. Permite modificar colores, tamaños, fuentes, espacios, fondos y distribuir los elementos.
+
+Ejemplo: Aplicar los colores verde, naranja, azul oscuro y crema de Rueda Libre, además de organizar las tarjetas de bicicletas en columnas.
+
+JavaScript Interactividad y comportamiento
+
+JavaScript permite que la página responda a las acciones del usuario. Se utiliza para validar formularios, mostrar mensajes y controlar elementos interactivos.
+
+Ejemplo: Validar el formulario de reservas para comprobar que el usuario haya ingresado correctamente su nombre, correo electrónico y los datos necesarios antes de enviar la solicitud.
+
+
+          Archivo de origen	 ->   Destino  ->	 Ruta escrita
+          index.html	    ->      Inicio	->  index.html
+          index.html	    ->      Tarifas	 ->  paginas/tarifas.html
+          index.html	    ->      Reservas	 ->  paginas/reservas.html
+          paginas/tarifas.html ->	Inicio	 ->  ../index.html
+          paginas/tarifas.html ->	Tarifas	 ->  tarifas.html
+          paginas/tarifas.html ->	Reservas	 ->  reservas.html
+          paginas/reservas.html ->	Inicio	 ->  ../index.html
+          paginas/reservas.html ->	Tarifas	 ->  tarifas.html
+          paginas/reservas.html ->	Reservas	 ->  reservas.html
+
+
+
+Esquema de regiones (le pedi ayuda a la IA para que realizara estos mapas)
+
+Inicio
+
+HEADER (Encabezado)
+│
+├── Nombre y logo de Rueda Libre
+│
+└── NAV (Menú de navegación)
+    ├── Inicio
+    ├── Tarifas y rutas
+    └── Reservas
+│
+MAIN (Contenido principal)
+│
+├── SECTION (Presentación del negocio)
+│
+├── SECTION (Nuestros servicios)
+│   ├── ARTICLE (Servicio 1)
+│   ├── ARTICLE (Servicio 2)
+│   └── ARTICLE (Servicio 3)
+│
+└── SECTION (Bicicletas disponibles)
+    ├── ARTICLE (Bicicleta 1)
+    ├── ARTICLE (Bicicleta 2)
+    └── ARTICLE (Bicicleta 3)
+│
+FOOTER (Pie de página)
+    ├── Nombre del negocio
+    ├── Correo electrónico
+    └── Año
+
+Tarifas
+
+HEADER (Encabezado)
+│
+├── Nombre y logo
+│
+└── NAV (Menú de navegación)
+    ├── Inicio
+    ├── Tarifas y rutas
+    └── Reservas
+│
+MAIN (Contenido principal)
+│
+├── SECTION (Tabla de tarifas)
+│
+├── SECTION (Tabla de recorridos)
+│
+└── ASIDE (Información complementaria)
+    └── Lista de elementos que debes llevar
+│
+FOOTER (Pie de página)
+    ├── Nombre del negocio
+    ├── Correo electrónico
+    └── Año
+
+Reservas
+
+HEADER (Encabezado)
+│
+├── Nombre y logo
+│
+└── NAV (Menú de navegación)
+    ├── Inicio
+    ├── Tarifas y rutas
+    └── Reservas
+│
+MAIN (Contenido principal)
+│
+├── SECTION (Reserva tu bicicleta)
+│   └── Correo de contacto
+│
+└── ASIDE (Información complementaria)
+    └── Horarios de atención
+│
+FOOTER (Pie de página)
+    ├── Nombre del negocio
+    ├── Correo electrónico
+    └── Año
+
+
+
+PRUBEBA DE FORMULARIO
+
+N.º	Campo	                Dato de prueba	                            Resultado esperado	                                                Resultado obtenido
+1	Nombre	                Campo vacío	                                Mostrar mensaje indicando que el nombre es obligatorio.	            Pendiente
+2	Nombre	                123456	                                    Rechazar números como nombre.	                                      Pendiente
+3	Correo electrónico	    usuario.com	                                Mostrar error porque falta el formato correcto del correo.	        Pendiente
+4	Correo electrónico	    usuario@	                                  Rechazar el correo por estar incompleto.	                          Pendiente
+5	Teléfono	              abc123	                                    Rechazar letras en el número telefónico.	                          Pendiente
+6	Teléfono	              123	                                        Mostrar error si no cumple con la cantidad de dígitos requerida.	  Pendiente
+7	Fecha de reserva	      Fecha anterior a la actual	                Impedir seleccionar una fecha pasada.	                              Pendiente
+8	Cantidad de bicicletas	0	                                          Mostrar error porque debe reservarse al menos una bicicleta.	      Pendiente
+9	Cantidad de bicicletas	-2	                                        Rechazar cantidades negativas.	                                    Pendiente
+10	Horario	Campo         sin seleccionar	                            Solicitar que se seleccione un horario.	                            Pendiente
+
+
+Correciones
+
+Inicio	Algunas imágenes pueden no tener texto alternativo:	Se Agregaron descripciones mediante el atributo alt.
+Inicio	Los encabezados pueden tener saltos de jerarquía:	Se Organizo los títulos utilizando H1, H2 y H3 según su importancia.
+Las tres páginas	El enfoque del teclado debe ser visible:	Se corrigieron y agregaron estilos :focus-visible para resaltar los elementos seleccionados.
+Las tres páginas	Se debe comprobar la navegación mediante teclado:	Se verificaron que los enlaces y controles sean accesibles mediante Tab y Shift + Tab.
+
+
+Registro de decisiones: Grid vs Flexbox (Aqui le pedi ayuda a la IA porque no entendi muy bien como debia hacerlo ;-;)
+
+Portada de inicio	CSS Grid:	Permite dividir la portada en dos columnas, una para el texto y otra para la imagen, utilizando unidades fr.
+
+Galería de rutas	CSS Grid:	Permite organizar las tres tarjetas de rutas en una misma fila, manteniendo espacios y tamaños uniformes.
+
+Reservas	CSS Grid:	Permite distribuir el formulario y la información de contacto en dos columnas con proporción 2:1.
+
+Fila del formulario	Flexbox:	Facilita colocar dos campos relacionados, como documento y celular, uno al lado del otro.
+
+Encabezado	Flexbox:	Permite alinear el logo, el nombre del negocio y el menú de navegación horizontalmente.
+
+Pie de página	Flexbox:	Facilita distribuir la información del negocio, contacto y horarios en diferentes bloques.
+
+
+Problema detectado	
+1	El encabezado ocupaba demasiado espacio horizontal en el celular y el menú quedaba apretado:	Se organizó el nombre del negocio arriba y el menú debajo, centrando ambos elementos.
+
+2	Las tarjetas de las rutas aparecían demasiado estrechas en pantallas pequeñas:	Se estableció una sola columna para celular y tres columnas para pantallas más grandes.
+
+3	Las tablas de tarifas sobrepasaban el ancho de la pantalla y se desplazaban horizontalmente:	Se redujo el padding de las celdas y el tamaño de la fuente para aprovechar mejor el espacio.
+
+4	Algunas imágenes podían superar el ancho disponible de su contenedor:	Se aplicó max-width: 100% y height: auto para mantener sus proporciones.
+
+
+
+Clases de bootstrap y sus funciones
+
+text-center:	Centra horizontalmente el texto de un elemento.
+mb-4:	Agrega un margen inferior para separar elementos.
+text-success:	Aplica el color verde del tema de Bootstrap al texto.
+d-flex:	Activa Flexbox para organizar los elementos de un contenedor.
+d-none d-md-block:	Oculta un elemento en pantallas pequeñas y lo muestra como bloque desde el punto de interrupción md.
+
+
+
+Conflictos y soluciones (Le pedi ayuda a la IA que analizara el codigo y me dijera que problemas habia y como solucionarlos)
+
+Colores de enlaces:	Los estilos propios pueden sobrescribir los colores de enlaces establecidos mediante clases de Bootstrap.	Revisar la regla aplicada en DevTools y conservar las clases utilitarias o ajustar la regla personalizada para respetar la paleta de Rueda Libre.
+Márgenes y espaciados:	Los márgenes definidos en CSS pueden entrar en conflicto con utilidades como mb-4, p-3 o gap-3.	Eliminar las reglas de distribución que ya no se necesitan y utilizar las utilidades de Bootstrap.
+Tamaño y tipografía:	Los estilos personalizados pueden cambiar el tamaño de los títulos o la fuente establecida mediante clases como fs-3 y fw-bold.	Revisar la declaración que prevalece en DevTools y ajustar o retirar la regla personalizada que genera el conflicto.
